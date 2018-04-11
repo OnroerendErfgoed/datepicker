@@ -109,9 +109,19 @@
     },
     "import": {
       "dependencies": [
-        "@types/pikaday",
-        "pikaday",
-        "moment"
+        {
+          "name": "aurelia-pikaday-datepicker",
+          "main": "index.js",
+          "path": "../node_modules/aurelia-pikaday-datepicker/dist/amd",
+          "resources": [
+            "**/*.{css,html}"
+          ],
+          "deps": [
+            "@types/pikaday",
+            "pikaday",
+            "moment"
+          ]
+        }
       ]
     }
   }
