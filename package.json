@@ -41,7 +41,8 @@
   "dependencies": {
     "@types/pikaday": "^1.6.3",
     "moment": "^2.22.0",
-    "pikaday": "^1.7.0"
+    "pikaday": "^1.7.0",
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
     "@types/bluebird-global": "^3.5.5",
@@ -119,7 +120,8 @@
           "deps": [
             "@types/pikaday",
             "pikaday",
-            "moment"
+            "moment",
+            "font-awesome"
           ]
         }
       ]
