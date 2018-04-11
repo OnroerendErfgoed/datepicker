@@ -38,7 +38,11 @@
     "ghpages": "cross-env ./node_modules/.bin/nps ghpages",
     "ghpages-setup": "cross-env ./node_modules/.bin/nps ghpages.setup"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/pikaday": "^1.6.3",
+    "moment": "^2.22.0",
+    "pikaday": "^1.7.0"
+  },
   "devDependencies": {
     "@types/bluebird-global": "^3.5.5",
     "@types/jasmine": "^2.8.6",

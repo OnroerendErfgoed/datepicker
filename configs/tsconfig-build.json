@@ -1,11 +1,15 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
+    "moduleResolution": "node",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "declaration": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strict": true,
-    "stripInternal": true
+    "noImplicitAny": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "include": ["../src"]
 }
