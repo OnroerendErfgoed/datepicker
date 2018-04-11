@@ -38,7 +38,10 @@
     "ghpages": "cross-env ./node_modules/.bin/nps ghpages",
     "ghpages-setup": "cross-env ./node_modules/.bin/nps ghpages.setup"
   },
-  "dependencies": {},
+  "dependencies": {
+    "pikaday": "^1.6.1",
+    "moment": "^2.18.1"
+  },
   "devDependencies": {
     "@types/bluebird-global": "^3.5.5",
     "@types/jasmine": "^2.8.6",
@@ -95,10 +98,7 @@
       "dist": "dist/amd"
     },
     "peerDependencies": {},
-    "dependencies": {
-      "pikaday": "^1.6.1",
-      "moment": "^2.18.1"
-    }
+    "dependencies": {}
   },
   "aurelia": {
     "import": {
