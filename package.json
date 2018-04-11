@@ -95,15 +95,18 @@
       "dist": "dist/amd"
     },
     "peerDependencies": {},
-    "dependencies": {}
+    "dependencies": {
+      "pikaday": "^1.6.1",
+      "moment": "^2.18.1"
+    }
   },
   "aurelia": {
     "import": {
       "dependencies": [
         {
-          "name": "aurelia-skeleton-plugin-ts-webpack",
-          "path": "../node_modules/aurelia-skeleton-plugin-ts-webpack/dist/amd",
-          "main": "aurelia-skeleton-plugin-ts-webpack"
+          "name": "aurelia-pikaday-datepicker",
+          "path": "../node_modules/aurelia-pikaday-datepicker/dist/amd",
+          "main": "aurelia-pikaday-datepicker"
         }
       ]
     }
