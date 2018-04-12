@@ -1,8 +1,8 @@
 // tslint:disable:no-implicit-dependencies
 // tslint:disable:import-name
 import { AureliaPlugin, ModuleDependenciesPlugin } from "aurelia-webpack-plugin";
-import ExtractTextPlugin from "extract-text-webpack-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import * as ExtractTextPlugin from "extract-text-webpack-plugin";
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import * as path from "path";
 import * as webpack from "webpack";
 

@@ -1,0 +1,10 @@
+aurelia-pikaday-datepicker .datepicker-container {
+  display: table; }
+  aurelia-pikaday-datepicker .datepicker-container .input-container {
+    width: 80%;
+    display: table-cell; }
+  aurelia-pikaday-datepicker .datepicker-container .icon-container {
+    width: 20%;
+    display: table-cell;
+    text-align: center;
+    cursor: pointer; }
