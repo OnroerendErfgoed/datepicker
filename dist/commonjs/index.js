@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_pikaday_datepicker_1 = require("./aurelia-pikaday-datepicker");
 exports.AureliaPikadayDatepicker = aurelia_pikaday_datepicker_1.AureliaPikadayDatepicker;
 var aurelia_framework_1 = require("aurelia-framework");
@@ -10,3 +10,4 @@ function configure(config) {
     ]);
 }
 exports.configure = configure;
+//# sourceMappingURL=index.js.map

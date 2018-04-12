@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 define(["require", "exports", "aurelia-framework", "pikaday", "moment"], function (require, exports, aurelia_framework_1, Pikaday, moment) {
     "use strict";
-    exports.__esModule = true;
+    Object.defineProperty(exports, "__esModule", { value: true });
     var AureliaPikadayDatepicker = (function () {
         function AureliaPikadayDatepicker(element) {
             this.element = element;
@@ -94,15 +94,15 @@ define(["require", "exports", "aurelia-framework", "pikaday", "moment"], functio
         __decorate([
             aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
             __metadata("design:type", String)
-        ], AureliaPikadayDatepicker.prototype, "value");
+        ], AureliaPikadayDatepicker.prototype, "value", void 0);
         __decorate([
             aurelia_framework_1.bindable,
             __metadata("design:type", String)
-        ], AureliaPikadayDatepicker.prototype, "placeholder");
+        ], AureliaPikadayDatepicker.prototype, "placeholder", void 0);
         __decorate([
             aurelia_framework_1.bindable,
             __metadata("design:type", Object)
-        ], AureliaPikadayDatepicker.prototype, "config");
+        ], AureliaPikadayDatepicker.prototype, "config", void 0);
         AureliaPikadayDatepicker = __decorate([
             aurelia_framework_1.inject(Element),
             __metadata("design:paramtypes", [Element])
@@ -111,3 +111,4 @@ define(["require", "exports", "aurelia-framework", "pikaday", "moment"], functio
     }());
     exports.AureliaPikadayDatepicker = AureliaPikadayDatepicker;
 });
+//# sourceMappingURL=aurelia-pikaday-datepicker.js.map

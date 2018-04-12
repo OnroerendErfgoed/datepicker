@@ -108,15 +108,15 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                 __decorate([
                     aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
                     __metadata("design:type", String)
-                ], AureliaPikadayDatepicker.prototype, "value");
+                ], AureliaPikadayDatepicker.prototype, "value", void 0);
                 __decorate([
                     aurelia_framework_1.bindable,
                     __metadata("design:type", String)
-                ], AureliaPikadayDatepicker.prototype, "placeholder");
+                ], AureliaPikadayDatepicker.prototype, "placeholder", void 0);
                 __decorate([
                     aurelia_framework_1.bindable,
                     __metadata("design:type", Object)
-                ], AureliaPikadayDatepicker.prototype, "config");
+                ], AureliaPikadayDatepicker.prototype, "config", void 0);
                 AureliaPikadayDatepicker = __decorate([
                     aurelia_framework_1.inject(Element),
                     __metadata("design:paramtypes", [Element])
@@ -127,3 +127,4 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
         }
     };
 });
+//# sourceMappingURL=aurelia-pikaday-datepicker.js.map
