@@ -116,8 +116,7 @@
   "aurelia": {
     "build": {
       "resources": [
-        "aurelia-pikaday-datepicker/aurelia-pikaday-datepicker",
-        "aurelia-pikaday-datepicker/value-converters/date"
+        "aurelia-pikaday-datepicker/aurelia-pikaday-datepicker"
       ]
     },
     "import": {
@@ -127,7 +126,7 @@
           "main": "index.js",
           "path": "../node_modules/aurelia-pikaday-datepicker/dist/amd",
           "resources": [
-            "**/*.{css,html}"
+            "**/*.{css,html,js}"
           ],
           "deps": [
             "@types/pikaday",
