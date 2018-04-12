@@ -7,107 +7,105 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define(["require", "exports", "aurelia-framework", "pikaday", "moment"], function (require, exports, aurelia_framework_1, Pikaday, moment) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
-        constructor(element) {
-            this.element = element;
-            this.placeholder = '';
-            this.config = {};
-            this.i18n = {
-                previousMonth: 'Vorige Maand',
-                nextMonth: 'Volgende Maand',
-                months: [
-                    'Januari',
-                    'Februari',
-                    'Maart',
-                    'April',
-                    'Mei',
-                    'Juni',
-                    'Juli',
-                    'Augustus',
-                    'September',
-                    'Oktober',
-                    'November',
-                    'December'
-                ],
-                weekdays: [
-                    'Zondag',
-                    'Maandag',
-                    'Dinsdag',
-                    'Woensdag',
-                    'Donderdag',
-                    'Vrijdag',
-                    'Zaterdag'
-                ],
-                weekdaysShort: [
-                    'Zo',
-                    'Ma',
-                    'Di',
-                    'Wo',
-                    'Do',
-                    'Vr',
-                    'Za'
-                ]
-            };
+import { inject, bindable, bindingMode } from 'aurelia-framework';
+import * as Pikaday from 'pikaday';
+import * as moment from 'moment';
+let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
+    constructor(element) {
+        this.element = element;
+        this.placeholder = '';
+        this.config = {};
+        this.i18n = {
+            previousMonth: 'Vorige Maand',
+            nextMonth: 'Volgende Maand',
+            months: [
+                'Januari',
+                'Februari',
+                'Maart',
+                'April',
+                'Mei',
+                'Juni',
+                'Juli',
+                'Augustus',
+                'September',
+                'Oktober',
+                'November',
+                'December'
+            ],
+            weekdays: [
+                'Zondag',
+                'Maandag',
+                'Dinsdag',
+                'Woensdag',
+                'Donderdag',
+                'Vrijdag',
+                'Zaterdag'
+            ],
+            weekdaysShort: [
+                'Zo',
+                'Ma',
+                'Di',
+                'Wo',
+                'Do',
+                'Vr',
+                'Za'
+            ]
+        };
+    }
+    attached() {
+        this.setConfig();
+        this.picker = new Pikaday(this.config);
+        if (this.config.defaultDate) {
+            this.picker.setDate(this.config.defaultDate);
         }
-        attached() {
-            this.setConfig();
-            this.picker = new Pikaday(this.config);
-            if (this.config.defaultDate) {
-                this.picker.setDate(this.config.defaultDate);
+    }
+    keydown(e) {
+        const key = e.which;
+        if (key >= 48 && key <= 57 || key === 191 || key === 8 || key === 189) {
+            if (this.picker.isVisible()) {
+                this.picker.hide();
             }
+            return true;
         }
-        keydown(e) {
-            const key = e.which;
-            if (key >= 48 && key <= 57 || key === 191 || key === 8 || key === 189) {
-                if (this.picker.isVisible()) {
-                    this.picker.hide();
-                }
-                return true;
-            }
-            else {
-                return false;
-            }
+        else {
+            return false;
         }
-        setConfig() {
-            this.config.field = this.element.querySelector('input');
-            if (!this.config.i18n) {
-                this.config.i18n = this.i18n;
-            }
-            if (!this.config.firstDay) {
-                this.config.firstDay = 1;
-            }
-            this.config.format = 'DD/MM/YYYY';
-            this.config.toString = (date, format) => {
-                return moment(date).format(format);
-            };
-            this.config.parse = (dateString, format) => {
-                const parts = dateString.split(/\/|-|\./);
-                const day = Math.floor(parts[0]);
-                const month = Math.floor(parts[1] - 1);
-                const year = Math.floor(parts[2]);
-                return new Date(year, month, day);
-            };
+    }
+    setConfig() {
+        this.config.field = this.element.querySelector('input');
+        if (!this.config.i18n) {
+            this.config.i18n = this.i18n;
         }
-    };
-    __decorate([
-        aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
-        __metadata("design:type", String)
-    ], AureliaPikadayDatepicker.prototype, "value", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], AureliaPikadayDatepicker.prototype, "placeholder", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", Object)
-    ], AureliaPikadayDatepicker.prototype, "config", void 0);
-    AureliaPikadayDatepicker = __decorate([
-        aurelia_framework_1.inject(Element),
-        __metadata("design:paramtypes", [Element])
-    ], AureliaPikadayDatepicker);
-    exports.AureliaPikadayDatepicker = AureliaPikadayDatepicker;
-});
-//# sourceMappingURL=aurelia-pikaday-datepicker.js.map
+        if (!this.config.firstDay) {
+            this.config.firstDay = 1;
+        }
+        this.config.format = 'DD/MM/YYYY';
+        this.config.toString = (date, format) => {
+            return moment(date).format(format);
+        };
+        this.config.parse = (dateString, format) => {
+            const parts = dateString.split(/\/|-|\./);
+            const day = Math.floor(parts[0]);
+            const month = Math.floor(parts[1] - 1);
+            const year = Math.floor(parts[2]);
+            return new Date(year, month, day);
+        };
+    }
+};
+__decorate([
+    bindable({ defaultBindingMode: bindingMode.twoWay }),
+    __metadata("design:type", String)
+], AureliaPikadayDatepicker.prototype, "value", void 0);
+__decorate([
+    bindable,
+    __metadata("design:type", String)
+], AureliaPikadayDatepicker.prototype, "placeholder", void 0);
+__decorate([
+    bindable,
+    __metadata("design:type", Object)
+], AureliaPikadayDatepicker.prototype, "config", void 0);
+AureliaPikadayDatepicker = __decorate([
+    inject(Element),
+    __metadata("design:paramtypes", [Element])
+], AureliaPikadayDatepicker);
+export { AureliaPikadayDatepicker };

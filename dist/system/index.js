@@ -24,4 +24,3 @@ System.register(["./aurelia-pikaday-datepicker", "aurelia-framework"], function 
         }
     };
 });
-//# sourceMappingURL=index.js.map

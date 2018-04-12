@@ -38,4 +38,3 @@ System.register(["moment"], function (exports_1, context_1) {
         }
     };
 });
-//# sourceMappingURL=date.js.map
