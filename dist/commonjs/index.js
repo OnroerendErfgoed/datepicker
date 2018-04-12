@@ -5,7 +5,8 @@ exports.AureliaPikadayDatepicker = aurelia_pikaday_datepicker_1.AureliaPikadayDa
 var aurelia_framework_1 = require("aurelia-framework");
 function configure(config) {
     config.globalResources([
-        aurelia_framework_1.PLATFORM.moduleName('./aurelia-pikaday-datepicker')
+        aurelia_framework_1.PLATFORM.moduleName('./aurelia-pikaday-datepicker'),
+        aurelia_framework_1.PLATFORM.moduleName('./value-converters/date')
     ]);
 }
 exports.configure = configure;

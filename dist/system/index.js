@@ -3,7 +3,8 @@ System.register(["./aurelia-pikaday-datepicker", "aurelia-framework"], function 
     var __moduleName = context_1 && context_1.id;
     function configure(config) {
         config.globalResources([
-            aurelia_framework_1.PLATFORM.moduleName('./aurelia-pikaday-datepicker')
+            aurelia_framework_1.PLATFORM.moduleName('./aurelia-pikaday-datepicker'),
+            aurelia_framework_1.PLATFORM.moduleName('./value-converters/date')
         ]);
     }
     exports_1("configure", configure);
