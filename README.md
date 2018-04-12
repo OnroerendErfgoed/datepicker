@@ -157,3 +157,9 @@ That's equivalent to the following:
 8. `git checkout master`
 
 And there you have it, one-click release :-)
+
+# 4. Todo's
+- Fix build issues
+- Expose necessary typings
+- Possibly merge css files into one
+- Create sync between src and demo folders
