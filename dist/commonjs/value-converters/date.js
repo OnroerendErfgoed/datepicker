@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var moment = require("moment");
 var DateValueConverter = (function () {
     function DateValueConverter() {
@@ -27,4 +27,3 @@ var DateValueConverter = (function () {
     return DateValueConverter;
 }());
 exports.DateValueConverter = DateValueConverter;
-//# sourceMappingURL=date.js.map

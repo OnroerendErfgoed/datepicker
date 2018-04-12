@@ -1,13 +1,8 @@
-define(["require", "exports", "./aurelia-pikaday-datepicker", "aurelia-framework"], function (require, exports, aurelia_pikaday_datepicker_1, aurelia_framework_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.AureliaPikadayDatepicker = aurelia_pikaday_datepicker_1.AureliaPikadayDatepicker;
-    function configure(config) {
-        config.globalResources([
-            aurelia_framework_1.PLATFORM.moduleName('./aurelia-pikaday-datepicker'),
-            aurelia_framework_1.PLATFORM.moduleName('./value-converters/date')
-        ]);
-    }
-    exports.configure = configure;
-});
-//# sourceMappingURL=index.js.map
+export { AureliaPikadayDatepicker } from './aurelia-pikaday-datepicker';
+import { PLATFORM } from 'aurelia-framework';
+export function configure(config) {
+    config.globalResources([
+        PLATFORM.moduleName('./aurelia-pikaday-datepicker'),
+        PLATFORM.moduleName('./value-converters/date')
+    ]);
+}

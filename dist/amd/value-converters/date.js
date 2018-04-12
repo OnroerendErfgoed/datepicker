@@ -1,6 +1,6 @@
 define(["require", "exports", "moment"], function (require, exports, moment) {
     "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.__esModule = true;
     var DateValueConverter = (function () {
         function DateValueConverter() {
         }
@@ -28,4 +28,3 @@ define(["require", "exports", "moment"], function (require, exports, moment) {
     }());
     exports.DateValueConverter = DateValueConverter;
 });
-//# sourceMappingURL=date.js.map
