@@ -1,10 +1,10 @@
-/*import { inject, bindable, bindingMode } from 'aurelia-framework';
+import { inject, bindable, bindingMode } from 'aurelia-framework';
 import * as Pikaday from 'pikaday';
 import * as moment from 'moment';
 
-@inject(Element)*/
+@inject(Element)
 export class AureliaPikadayDatepicker {
-  /*@bindable({ defaultBindingMode: bindingMode.twoWay }) public value: string;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: string;
   @bindable public placeholder: string = '';
   @bindable public config: Pikaday.PikadayOptions = {};
 
@@ -89,5 +89,5 @@ export class AureliaPikadayDatepicker {
       const year = Math.floor(parts[2]);
       return new Date(year, month, day);
     };
-  }*/
+  }
 }
