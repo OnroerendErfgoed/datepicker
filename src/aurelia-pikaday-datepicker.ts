@@ -7,6 +7,7 @@ export class AureliaPikadayDatepicker {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: string;
   @bindable public placeholder: string = '';
   @bindable public config: Pikaday.PikadayOptions = {};
+  @bindable public disabled: boolean;
 
   private picker: Pikaday;
   private i18n: any = {

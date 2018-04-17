@@ -117,6 +117,10 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                     aurelia_framework_1.bindable,
                     __metadata("design:type", Object)
                 ], AureliaPikadayDatepicker.prototype, "config");
+                __decorate([
+                    aurelia_framework_1.bindable,
+                    __metadata("design:type", Boolean)
+                ], AureliaPikadayDatepicker.prototype, "disabled");
                 AureliaPikadayDatepicker = __decorate([
                     aurelia_framework_1.inject(Element),
                     __metadata("design:paramtypes", [Element])
