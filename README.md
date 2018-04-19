@@ -163,3 +163,4 @@ And there you have it, one-click release :-)
 - Expose necessary typings
 - Possibly merge css files into one
 - Create sync between src and demo folders
+- hide calendar icon when disabled
