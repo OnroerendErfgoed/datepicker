@@ -164,3 +164,4 @@ And there you have it, one-click release :-)
 - Possibly merge css files into one
 - Create sync between src and demo folders
 - Investigate issue with preset dates (possibly to do with if.bind and re-initialization)
+- Allow keypad numbers, see https://stackoverflow.com/questions/13196945/keycode-values-for-numeric-keypad/13196983
