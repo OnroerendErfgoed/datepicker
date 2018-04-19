@@ -104,6 +104,10 @@ __decorate([
     bindable,
     __metadata("design:type", Object)
 ], AureliaPikadayDatepicker.prototype, "config", void 0);
+__decorate([
+    bindable,
+    __metadata("design:type", Boolean)
+], AureliaPikadayDatepicker.prototype, "disabled", void 0);
 AureliaPikadayDatepicker = __decorate([
     inject(Element),
     __metadata("design:paramtypes", [Element])
