@@ -163,5 +163,5 @@ And there you have it, one-click release :-)
 - Expose necessary typings
 - Possibly merge css files into one
 - Create sync between src and demo folders
-- Investigate issue with preset dates (possibly to do with if.bind and re-initialization)
+- Investigate issue with preset dates (possibly to do with if.bind and re-initialization) SOLUTION: destroy this.picker in detached
 - Allow keypad numbers, see https://stackoverflow.com/questions/13196945/keycode-values-for-numeric-keypad/13196983
