@@ -60,7 +60,11 @@ export class AureliaPikadayDatepicker {
     }
   }
 
-  public keydown(e: KeyboardEvent) {
+  public detached() {
+    this.picker.destroy();
+  }
+
+  public keypress(e: KeyboardEvent) {
     const key = e.which;
 
     if (key >= 48 && key <= 57 || key === 191 || key === 8 || key === 189) {
