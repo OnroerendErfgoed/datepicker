@@ -61,9 +61,12 @@ var AureliaPikadayDatepicker = (function () {
             this.picker.setDate(this.config.defaultDate);
         }
     };
-    AureliaPikadayDatepicker.prototype.keydown = function (e) {
+    AureliaPikadayDatepicker.prototype.detached = function () {
+        this.picker.destroy();
+    };
+    AureliaPikadayDatepicker.prototype.keypress = function (e) {
         var key = e.which;
-        if (key >= 48 && key <= 57 || key === 191 || key === 8 || key === 189) {
+        if ((key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key === 191 || key === 8 || key === 189) {
             if (this.picker.isVisible()) {
                 this.picker.hide();
             }
