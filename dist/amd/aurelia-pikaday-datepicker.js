@@ -64,7 +64,7 @@ define(["require", "exports", "aurelia-framework", "pikaday", "moment"], functio
         };
         AureliaPikadayDatepicker.prototype.keypress = function (e) {
             var key = e.which;
-            if ((key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key === 45 || key === 46 || key === 47) {
+            if ((key >= 45 && key <= 57)) {
                 if (this.picker.isVisible()) {
                     this.picker.hide();
                 }
