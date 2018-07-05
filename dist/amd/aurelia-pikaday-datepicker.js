@@ -66,6 +66,7 @@ define(["require", "exports", "aurelia-framework", "pikaday", "moment"], functio
             if (this.picker.isVisible()) {
                 this.picker.hide();
             }
+            return true;
         };
         AureliaPikadayDatepicker.prototype.setConfig = function () {
             this.config.field = this.element.querySelector('input');

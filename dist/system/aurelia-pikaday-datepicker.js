@@ -80,6 +80,7 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                     if (this.picker.isVisible()) {
                         this.picker.hide();
                     }
+                    return true;
                 };
                 AureliaPikadayDatepicker.prototype.setConfig = function () {
                     this.config.field = this.element.querySelector('input');

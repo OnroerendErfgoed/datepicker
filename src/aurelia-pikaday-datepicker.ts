@@ -68,6 +68,7 @@ export class AureliaPikadayDatepicker {
     if (this.picker.isVisible()) {
       this.picker.hide();
     }
+    return true;
   }
 
   private setConfig() {

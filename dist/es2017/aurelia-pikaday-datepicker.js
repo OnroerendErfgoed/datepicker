@@ -66,6 +66,7 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
         if (this.picker.isVisible()) {
             this.picker.hide();
         }
+        return true;
     }
     setConfig() {
         this.config.field = this.element.querySelector('input');
