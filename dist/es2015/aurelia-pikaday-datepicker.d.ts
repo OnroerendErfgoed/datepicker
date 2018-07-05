@@ -11,6 +11,6 @@ export declare class AureliaPikadayDatepicker {
     constructor(element: Element);
     attached(): void;
     detached(): void;
-    keypress(e: KeyboardEvent): boolean;
+    keydown(e: KeyboardEvent): void;
     private setConfig();
 }

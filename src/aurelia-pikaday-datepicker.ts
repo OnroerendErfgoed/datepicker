@@ -64,16 +64,9 @@ export class AureliaPikadayDatepicker {
     this.picker.destroy();
   }
 
-  public keypress(e: KeyboardEvent) {
-    const key = e.which;
-
-    if ((key >= 45 && key <= 57)) {
-      if (this.picker.isVisible()) {
-        this.picker.hide();
-      }
-      return true;
-    } else {
-      return false;
+  public keydown(e: KeyboardEvent) {
+    if (this.picker.isVisible()) {
+      this.picker.hide();
     }
   }
 

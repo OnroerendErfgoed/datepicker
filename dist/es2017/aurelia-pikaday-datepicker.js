@@ -62,16 +62,9 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
     detached() {
         this.picker.destroy();
     }
-    keypress(e) {
-        const key = e.which;
-        if ((key >= 45 && key <= 57)) {
-            if (this.picker.isVisible()) {
-                this.picker.hide();
-            }
-            return true;
-        }
-        else {
-            return false;
+    keydown(e) {
+        if (this.picker.isVisible()) {
+            this.picker.hide();
         }
     }
     setConfig() {

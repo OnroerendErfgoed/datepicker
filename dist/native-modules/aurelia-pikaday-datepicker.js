@@ -64,16 +64,9 @@ var AureliaPikadayDatepicker = (function () {
     AureliaPikadayDatepicker.prototype.detached = function () {
         this.picker.destroy();
     };
-    AureliaPikadayDatepicker.prototype.keypress = function (e) {
-        var key = e.which;
-        if ((key >= 45 && key <= 57)) {
-            if (this.picker.isVisible()) {
-                this.picker.hide();
-            }
-            return true;
-        }
-        else {
-            return false;
+    AureliaPikadayDatepicker.prototype.keydown = function (e) {
+        if (this.picker.isVisible()) {
+            this.picker.hide();
         }
     };
     AureliaPikadayDatepicker.prototype.setConfig = function () {
