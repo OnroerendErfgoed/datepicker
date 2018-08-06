@@ -82,11 +82,7 @@ export class AureliaPikadayDatepicker {
       return moment(date).format(format);
     };
     this.config.parse = (dateString: string, format: string) => {
-      const parts: any[] = dateString.split(/\/|-|\./);
-      const day = Math.floor(parts[0]);
-      const month = Math.floor(parts[1] - 1);
-      const year = Math.floor(parts[2]);
-      return new Date(year, month, day);
+      return moment(dateString, format).toDate();
     };
   }
 }

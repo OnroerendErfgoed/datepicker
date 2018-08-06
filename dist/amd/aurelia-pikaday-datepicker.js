@@ -81,11 +81,7 @@ define(["require", "exports", "aurelia-framework", "pikaday", "moment"], functio
                 return moment(date).format(format);
             };
             this.config.parse = function (dateString, format) {
-                var parts = dateString.split(/\/|-|\./);
-                var day = Math.floor(parts[0]);
-                var month = Math.floor(parts[1] - 1);
-                var year = Math.floor(parts[2]);
-                return new Date(year, month, day);
+                return moment(dateString, format).toDate();
             };
         };
         __decorate([
