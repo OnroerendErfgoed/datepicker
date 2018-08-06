@@ -49,9 +49,7 @@ export class AureliaPikadayDatepicker {
 
   constructor(
     private element: Element
-  ) {}
-
-  public attached() {
+  ) {
     this.setConfig();
 
     this.picker = new Pikaday(this.config);

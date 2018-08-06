@@ -51,14 +51,12 @@ define(["require", "exports", "aurelia-framework", "pikaday", "moment"], functio
                     'Za'
                 ]
             };
-        }
-        AureliaPikadayDatepicker.prototype.attached = function () {
             this.setConfig();
             this.picker = new Pikaday(this.config);
             if (this.config.defaultDate) {
                 this.picker.setDate(this.config.defaultDate);
             }
-        };
+        }
         AureliaPikadayDatepicker.prototype.detached = function () {
             this.picker.destroy();
         };
