@@ -7,7 +7,8 @@ export class DateValueConverter {
     }
     fromView(value) {
         if (value) {
-            return moment(value, 'DD/MM/YYYY').toDate();
+            const date = moment(value, 'DD/MM/YYYY').toDate();
+            return !isNaN(date.getTime()) ? date : false;
         }
     }
 }

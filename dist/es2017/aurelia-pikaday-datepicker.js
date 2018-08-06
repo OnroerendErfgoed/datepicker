@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { inject, bindable, bindingMode } from 'aurelia-framework';
 import * as Pikaday from 'pikaday';
+import * as moment from 'moment';
 let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
     constructor(element) {
         this.element = element;
@@ -76,6 +77,12 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
             this.config.firstDay = 1;
         }
         this.config.format = 'DD/MM/YYYY';
+        this.config.toString = (date, format) => {
+            return moment(date).format(format);
+        };
+        this.config.parse = (dateString, format) => {
+            return moment(dateString, format).toDate();
+        };
     }
 };
 __decorate([

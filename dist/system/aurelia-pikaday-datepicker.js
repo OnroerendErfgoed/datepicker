@@ -1,4 +1,4 @@
-System.register(["aurelia-framework", "pikaday"], function (exports_1, context_1) {
+System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,7 +10,7 @@ System.register(["aurelia-framework", "pikaday"], function (exports_1, context_1
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var aurelia_framework_1, Pikaday, AureliaPikadayDatepicker;
+    var aurelia_framework_1, Pikaday, moment, AureliaPikadayDatepicker;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -18,6 +18,9 @@ System.register(["aurelia-framework", "pikaday"], function (exports_1, context_1
             },
             function (Pikaday_1) {
                 Pikaday = Pikaday_1;
+            },
+            function (moment_1) {
+                moment = moment_1;
             }
         ],
         execute: function () {
@@ -88,6 +91,12 @@ System.register(["aurelia-framework", "pikaday"], function (exports_1, context_1
                         this.config.firstDay = 1;
                     }
                     this.config.format = 'DD/MM/YYYY';
+                    this.config.toString = function (date, format) {
+                        return moment(date).format(format);
+                    };
+                    this.config.parse = function (dateString, format) {
+                        return moment(dateString, format).toDate();
+                    };
                 };
                 __decorate([
                     aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),

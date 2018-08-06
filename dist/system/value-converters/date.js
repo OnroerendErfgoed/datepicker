@@ -19,7 +19,8 @@ System.register(["moment"], function (exports_1, context_1) {
                 };
                 DateValueConverter.prototype.fromView = function (value) {
                     if (value) {
-                        return moment(value, 'DD/MM/YYYY').toDate();
+                        var date = moment(value, 'DD/MM/YYYY').toDate();
+                        return !isNaN(date.getTime()) ? date : false;
                     }
                 };
                 return DateValueConverter;

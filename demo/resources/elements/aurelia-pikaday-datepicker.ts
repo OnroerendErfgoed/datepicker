@@ -78,5 +78,11 @@ export class AureliaPikadayDatepicker {
     if (!this.config.firstDay) { this.config.firstDay = 1; }
 
     this.config.format = 'DD/MM/YYYY';
+    (this.config.toString as any) = (date: Date, format: string) => {
+      return moment(date).format(format);
+    };
+    this.config.parse = (dateString: string, format: string) => {
+      return moment(dateString, format).toDate();
+    };
   }
 }

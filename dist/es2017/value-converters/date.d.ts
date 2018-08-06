@@ -1,4 +1,4 @@
 export declare class DateValueConverter {
     toView(value: Date): string;
-    fromView(value: any): Date;
+    fromView(value: any): false | Date;
 }
