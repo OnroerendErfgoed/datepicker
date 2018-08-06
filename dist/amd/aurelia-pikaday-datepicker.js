@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define(["require", "exports", "aurelia-framework", "pikaday", "moment"], function (require, exports, aurelia_framework_1, Pikaday, moment) {
+define(["require", "exports", "aurelia-framework", "pikaday"], function (require, exports, aurelia_framework_1, Pikaday) {
     "use strict";
     exports.__esModule = true;
     var AureliaPikadayDatepicker = (function () {
@@ -77,12 +77,6 @@ define(["require", "exports", "aurelia-framework", "pikaday", "moment"], functio
                 this.config.firstDay = 1;
             }
             this.config.format = 'DD/MM/YYYY';
-            this.config.toString = function (date, format) {
-                return moment(date).format(format);
-            };
-            this.config.parse = function (dateString, format) {
-                return moment(dateString, format).toDate();
-            };
         };
         __decorate([
             aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
