@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define(["require", "exports", "aurelia-framework", "pikaday"], function (require, exports, aurelia_framework_1, Pikaday) {
+define(["require", "exports", "aurelia-framework", "pikaday", "moment"], function (require, exports, aurelia_framework_1, Pikaday, moment) {
     "use strict";
     exports.__esModule = true;
     var AureliaPikadayDatepicker = (function () {
@@ -51,13 +51,15 @@ define(["require", "exports", "aurelia-framework", "pikaday"], function (require
                     'Za'
                 ]
             };
-        }
-        AureliaPikadayDatepicker.prototype.attached = function () {
             this.setConfig();
             this.picker = new Pikaday(this.config);
             if (this.config.defaultDate) {
                 this.picker.setDate(this.config.defaultDate);
             }
+        }
+        AureliaPikadayDatepicker.prototype.attached = function () {
+            this.element.appendChild(this.picker.el);
+            this.picker.hide();
         };
         AureliaPikadayDatepicker.prototype.detached = function () {
             this.picker.destroy();
@@ -69,14 +71,24 @@ define(["require", "exports", "aurelia-framework", "pikaday"], function (require
             return true;
         };
         AureliaPikadayDatepicker.prototype.setConfig = function () {
-            this.config.field = this.input;
+            var _this = this;
             if (!this.config.i18n) {
                 this.config.i18n = this.i18n;
             }
             if (!this.config.firstDay) {
                 this.config.firstDay = 1;
             }
-            this.config.format = 'DD/MM/YYYY';
+            this.config.format = 'YYYY-MM-DD';
+            this.config.toString = function (date, format) {
+                return moment(date).format(format);
+            };
+            this.config.parse = function (dateString, format) {
+                return moment(dateString, format).toDate();
+            };
+            this.config.onSelect = function (date) {
+                _this.value = _this.picker.toString();
+                _this.picker.hide();
+            };
         };
         __decorate([
             aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),

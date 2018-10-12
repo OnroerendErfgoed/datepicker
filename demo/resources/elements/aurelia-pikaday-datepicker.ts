@@ -52,26 +52,18 @@ export class AureliaPikadayDatepicker {
   constructor(
     private element: Element
   ) {
-    /*this.setConfig();
-
-    this.picker = new Pikaday(this.config);
-    if (this.config.defaultDate) {
-      this.picker.setDate(this.config.defaultDate);
-    }*/
-  }
-
-  public attached() {
     this.setConfig();
+
     this.picker = new Pikaday(this.config);
     if (this.config.defaultDate) {
       this.picker.setDate(this.config.defaultDate);
     }
   }
 
-  /*public attached() {
+  public attached() {
     this.element.appendChild(this.picker.el);
     this.picker.hide();
-  }*/
+  }
 
   public detached() {
     this.picker.destroy();
@@ -85,16 +77,19 @@ export class AureliaPikadayDatepicker {
   }
 
   private setConfig() {
-    this.config.field = this.input;
     if (!this.config.i18n) { this.config.i18n = this.i18n; }
     if (!this.config.firstDay) { this.config.firstDay = 1; }
 
-    this.config.format = 'DD/MM/YYYY';
-    /*(this.config.toString as any) = (date: Date, format: string) => {
+    this.config.format = 'YYYY-MM-DD';
+    (this.config.toString as any) = (date: Date, format: string) => {
       return moment(date).format(format);
     };
     this.config.parse = (dateString: string, format: string) => {
       return moment(dateString, format).toDate();
-    };*/
+    };
+    this.config.onSelect = (date) => {
+      this.value = this.picker.toString();
+      this.picker.hide();
+    };
   }
 }

@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { inject, bindable, bindingMode, customElement } from 'aurelia-framework';
 import * as Pikaday from 'pikaday';
+import * as moment from 'moment';
 let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
     constructor(element) {
         this.element = element;
@@ -50,13 +51,15 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
                 'Za'
             ]
         };
-    }
-    attached() {
         this.setConfig();
         this.picker = new Pikaday(this.config);
         if (this.config.defaultDate) {
             this.picker.setDate(this.config.defaultDate);
         }
+    }
+    attached() {
+        this.element.appendChild(this.picker.el);
+        this.picker.hide();
     }
     detached() {
         this.picker.destroy();
@@ -68,14 +71,23 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
         return true;
     }
     setConfig() {
-        this.config.field = this.input;
         if (!this.config.i18n) {
             this.config.i18n = this.i18n;
         }
         if (!this.config.firstDay) {
             this.config.firstDay = 1;
         }
-        this.config.format = 'DD/MM/YYYY';
+        this.config.format = 'YYYY-MM-DD';
+        this.config.toString = (date, format) => {
+            return moment(date).format(format);
+        };
+        this.config.parse = (dateString, format) => {
+            return moment(dateString, format).toDate();
+        };
+        this.config.onSelect = (date) => {
+            this.value = this.picker.toString();
+            this.picker.hide();
+        };
     }
 };
 __decorate([
