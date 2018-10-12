@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { inject, bindable, bindingMode } from 'aurelia-framework';
+import { inject, bindable, bindingMode, customElement } from 'aurelia-framework';
 import * as Pikaday from 'pikaday';
 import * as moment from 'moment';
 let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
@@ -51,13 +51,15 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
                 'Za'
             ]
         };
-    }
-    attached() {
         this.setConfig();
         this.picker = new Pikaday(this.config);
         if (this.config.defaultDate) {
             this.picker.setDate(this.config.defaultDate);
         }
+    }
+    attached() {
+        this.config.field = this.input;
+        this.picker = new Pikaday(this.config);
     }
     detached() {
         this.picker.destroy();
@@ -69,7 +71,6 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
         return true;
     }
     setConfig() {
-        this.config.field = this.input;
         if (!this.config.i18n) {
             this.config.i18n = this.i18n;
         }
@@ -102,6 +103,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], AureliaPikadayDatepicker.prototype, "disabled", void 0);
 AureliaPikadayDatepicker = __decorate([
+    customElement('aurelia-pikaday-datepicker'),
     inject(Element),
     __metadata("design:paramtypes", [Element])
 ], AureliaPikadayDatepicker);

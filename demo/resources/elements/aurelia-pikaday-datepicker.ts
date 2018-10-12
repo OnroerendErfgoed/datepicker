@@ -1,7 +1,8 @@
-import { inject, bindable, bindingMode } from 'aurelia-framework';
+import { inject, bindable, bindingMode, customElement } from 'aurelia-framework';
 import * as Pikaday from 'pikaday';
 import * as moment from 'moment';
 
+@customElement('aurelia-pikaday-datepicker')
 @inject(Element)
 export class AureliaPikadayDatepicker {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: string;
@@ -50,15 +51,18 @@ export class AureliaPikadayDatepicker {
 
   constructor(
     private element: Element
-  ) {}
-
-  public attached() {
+  ) {
     this.setConfig();
 
     this.picker = new Pikaday(this.config);
     if (this.config.defaultDate) {
       this.picker.setDate(this.config.defaultDate);
     }
+  }
+
+  public attached() {
+    this.config.field = this.input;
+    this.picker = new Pikaday(this.config);
   }
 
   public detached() {
@@ -73,8 +77,6 @@ export class AureliaPikadayDatepicker {
   }
 
   private setConfig() {
-    this.config.field = this.input;
-
     if (!this.config.i18n) { this.config.i18n = this.i18n; }
     if (!this.config.firstDay) { this.config.firstDay = 1; }
 

@@ -65,13 +65,15 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                             'Za'
                         ]
                     };
-                }
-                AureliaPikadayDatepicker.prototype.attached = function () {
                     this.setConfig();
                     this.picker = new Pikaday(this.config);
                     if (this.config.defaultDate) {
                         this.picker.setDate(this.config.defaultDate);
                     }
+                }
+                AureliaPikadayDatepicker.prototype.attached = function () {
+                    this.config.field = this.input;
+                    this.picker = new Pikaday(this.config);
                 };
                 AureliaPikadayDatepicker.prototype.detached = function () {
                     this.picker.destroy();
@@ -83,7 +85,6 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                     return true;
                 };
                 AureliaPikadayDatepicker.prototype.setConfig = function () {
-                    this.config.field = this.input;
                     if (!this.config.i18n) {
                         this.config.i18n = this.i18n;
                     }
@@ -115,6 +116,7 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                     __metadata("design:type", Boolean)
                 ], AureliaPikadayDatepicker.prototype, "disabled");
                 AureliaPikadayDatepicker = __decorate([
+                    aurelia_framework_1.customElement('aurelia-pikaday-datepicker'),
                     aurelia_framework_1.inject(Element),
                     __metadata("design:paramtypes", [Element])
                 ], AureliaPikadayDatepicker);
