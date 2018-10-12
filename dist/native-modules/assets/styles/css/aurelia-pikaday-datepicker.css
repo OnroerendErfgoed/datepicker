@@ -8,3 +8,6 @@ aurelia-pikaday-datepicker .datepicker-container {
     display: table-cell;
     text-align: center;
     cursor: pointer; }
+
+aurelia-pikaday-datepicker .pika-single {
+  position: absolute !important; }

@@ -51,13 +51,13 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
                 'Za'
             ]
         };
+    }
+    attached() {
         this.setConfig();
         this.picker = new Pikaday(this.config);
         if (this.config.defaultDate) {
             this.picker.setDate(this.config.defaultDate);
         }
-    }
-    attached() {
         this.element.appendChild(this.picker.el);
         this.picker.hide();
     }
@@ -87,6 +87,11 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
         this.config.onSelect = (date) => {
             this.value = this.picker.toString();
             this.picker.hide();
+        };
+        this.config.onOpen = () => {
+            if (this.picker) {
+                this.picker.setDate(this.value);
+            }
         };
     }
 };

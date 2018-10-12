@@ -51,16 +51,16 @@ export class AureliaPikadayDatepicker {
 
   constructor(
     private element: Element
-  ) {
+  ) {}
+
+  public attached() {
     this.setConfig();
 
     this.picker = new Pikaday(this.config);
     if (this.config.defaultDate) {
       this.picker.setDate(this.config.defaultDate);
     }
-  }
 
-  public attached() {
     this.element.appendChild(this.picker.el);
     this.picker.hide();
   }
@@ -90,6 +90,11 @@ export class AureliaPikadayDatepicker {
     this.config.onSelect = (date) => {
       this.value = this.picker.toString();
       this.picker.hide();
+    };
+    this.config.onOpen = () => {
+      if (this.picker) {
+        this.picker.setDate(this.value);
+      }
     };
   }
 }

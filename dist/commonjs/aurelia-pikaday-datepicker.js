@@ -53,13 +53,13 @@ var AureliaPikadayDatepicker = (function () {
                 'Za'
             ]
         };
+    }
+    AureliaPikadayDatepicker.prototype.attached = function () {
         this.setConfig();
         this.picker = new Pikaday(this.config);
         if (this.config.defaultDate) {
             this.picker.setDate(this.config.defaultDate);
         }
-    }
-    AureliaPikadayDatepicker.prototype.attached = function () {
         this.element.appendChild(this.picker.el);
         this.picker.hide();
     };
@@ -90,6 +90,11 @@ var AureliaPikadayDatepicker = (function () {
         this.config.onSelect = function (date) {
             _this.value = _this.picker.toString();
             _this.picker.hide();
+        };
+        this.config.onOpen = function () {
+            if (_this.picker) {
+                _this.picker.setDate(_this.value);
+            }
         };
     };
     __decorate([
