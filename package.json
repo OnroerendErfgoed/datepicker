@@ -1,6 +1,6 @@
 {
   "name": "aurelia-pikaday-datepicker",
-  "version": "0.1.0",
+  "version": "0.1.0a5",
   "description": "An Aurelia datepicker plugin written in Typescript that is a wrapper around Pikaday.",
   "keywords": [
     "aurelia",
