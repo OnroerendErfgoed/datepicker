@@ -60,11 +60,6 @@ export class AureliaPikadayDatepicker {
     }
   }
 
-  public attached() {
-    this.config.field = this.input;
-    this.picker = new Pikaday(this.config);
-  }
-
   public detached() {
     this.picker.destroy();
   }

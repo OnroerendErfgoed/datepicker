@@ -71,10 +71,6 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                         this.picker.setDate(this.config.defaultDate);
                     }
                 }
-                AureliaPikadayDatepicker.prototype.attached = function () {
-                    this.config.field = this.input;
-                    this.picker = new Pikaday(this.config);
-                };
                 AureliaPikadayDatepicker.prototype.detached = function () {
                     this.picker.destroy();
                 };

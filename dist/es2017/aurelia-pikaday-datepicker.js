@@ -57,10 +57,6 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
             this.picker.setDate(this.config.defaultDate);
         }
     }
-    attached() {
-        this.config.field = this.input;
-        this.picker = new Pikaday(this.config);
-    }
     detached() {
         this.picker.destroy();
     }
