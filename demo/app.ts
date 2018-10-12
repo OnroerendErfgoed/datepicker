@@ -1,3 +1,3 @@
 export class App {
-  public date: Date = new Date(2018, 6, 5);
+  public date: string = '2018-10-12';
 }

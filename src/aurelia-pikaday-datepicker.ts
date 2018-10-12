@@ -9,6 +9,7 @@ export class AureliaPikadayDatepicker {
   @bindable public config: Pikaday.PikadayOptions = {};
   @bindable public disabled: boolean;
 
+  private input: HTMLElement;
   private picker: Pikaday;
   private i18n: any = {
     previousMonth: 'Vorige Maand',
@@ -49,7 +50,9 @@ export class AureliaPikadayDatepicker {
 
   constructor(
     private element: Element
-  ) {
+  ) {}
+
+  public attached() {
     this.setConfig();
 
     this.picker = new Pikaday(this.config);
@@ -70,7 +73,7 @@ export class AureliaPikadayDatepicker {
   }
 
   private setConfig() {
-    this.config.field = this.element.querySelector('input');
+    this.config.field = this.input;
 
     if (!this.config.i18n) { this.config.i18n = this.i18n; }
     if (!this.config.firstDay) { this.config.firstDay = 1; }
