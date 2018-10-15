@@ -84,12 +84,16 @@ export class AureliaPikadayDatepicker {
       return moment(dateString, format).toDate();
     };
     this.config.onOpen = () => {
-      if (this.picker && this.value) {
+      if (this.disabled) {
+        this.picker.hide();
+      } else if (this.value) {
         this.picker.setDate(this.value);
       }
     };
     this.config.onClose = () => {
-      this.value = this.picker.toString();
+      if (!this.disabled) {
+        this.value = this.picker.toString();
+      }
     };
   }
 }
