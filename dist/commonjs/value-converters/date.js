@@ -11,8 +11,7 @@ var DateValueConverter = (function () {
     };
     DateValueConverter.prototype.fromView = function (value) {
         if (value) {
-            var date = moment(value, 'DD/MM/YYYY').toDate();
-            return !isNaN(date.getTime()) ? date : false;
+            return moment(value, 'DD/MM/YYYY').format('YYYY-MM-DD');
         }
     };
     return DateValueConverter;
