@@ -72,8 +72,6 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                     if (this.config.defaultDate) {
                         this.picker.setDate(this.config.defaultDate);
                     }
-                    this.element.appendChild(this.picker.el);
-                    this.picker.hide();
                 };
                 AureliaPikadayDatepicker.prototype.detached = function () {
                     this.picker.destroy();
@@ -86,6 +84,7 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                 };
                 AureliaPikadayDatepicker.prototype.setConfig = function () {
                     var _this = this;
+                    this.config.field = this.element;
                     if (!this.config.i18n) {
                         this.config.i18n = this.i18n;
                     }
@@ -99,14 +98,13 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                     this.config.parse = function (dateString, format) {
                         return moment(dateString, format).toDate();
                     };
-                    this.config.onSelect = function (date) {
-                        _this.value = _this.picker.toString();
-                        _this.picker.hide();
-                    };
                     this.config.onOpen = function () {
-                        if (_this.picker) {
+                        if (_this.picker && _this.value) {
                             _this.picker.setDate(_this.value);
                         }
+                    };
+                    this.config.onClose = function () {
+                        _this.value = _this.picker.toString();
                     };
                 };
                 __decorate([
@@ -126,7 +124,6 @@ System.register(["aurelia-framework", "pikaday", "moment"], function (exports_1,
                     __metadata("design:type", Boolean)
                 ], AureliaPikadayDatepicker.prototype, "disabled");
                 AureliaPikadayDatepicker = __decorate([
-                    aurelia_framework_1.customElement('aurelia-pikaday-datepicker'),
                     aurelia_framework_1.inject(Element),
                     __metadata("design:paramtypes", [Element])
                 ], AureliaPikadayDatepicker);

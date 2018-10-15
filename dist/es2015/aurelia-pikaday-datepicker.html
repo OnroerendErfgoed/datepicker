@@ -1,9 +1,9 @@
 <template>
   <require from="./value-converters/date"></require>
   
-  <div click.delegate="!disabled ? picker.show() : null" class="datepicker-container">
+  <div class="datepicker-container">
     <div class="input-container">
-      <input type="text" value.bind="value | date & updateTrigger:'change'" keydown.delegate="keydown($event)" placeholder.bind="placeholder" disabled.bind="disabled" ref="input">
+      <input type="text" value.bind="value | date & updateTrigger:'change'" keydown.delegate="keydown($event)" placeholder.bind="placeholder" disabled.bind="disabled">
     </div>
     <div class="icon-container">
       <i class="fa fa-calendar"></i>

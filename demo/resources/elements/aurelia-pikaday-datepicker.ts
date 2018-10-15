@@ -1,8 +1,7 @@
-import { inject, bindable, bindingMode, customElement } from 'aurelia-framework';
+import { inject, bindable, bindingMode } from 'aurelia-framework';
 import * as Pikaday from 'pikaday';
 import * as moment from 'moment';
 
-@customElement('aurelia-pikaday-datepicker')
 @inject(Element)
 export class AureliaPikadayDatepicker {
   @bindable({ defaultBindingMode: bindingMode.twoWay }) public value: string;
@@ -10,7 +9,6 @@ export class AureliaPikadayDatepicker {
   @bindable public config: Pikaday.PikadayOptions = {};
   @bindable public disabled: boolean;
 
-  private input: HTMLElement;
   private picker: Pikaday;
   private i18n: any = {
     previousMonth: 'Vorige Maand',
@@ -60,9 +58,6 @@ export class AureliaPikadayDatepicker {
     if (this.config.defaultDate) {
       this.picker.setDate(this.config.defaultDate);
     }
-
-    this.element.appendChild(this.picker.el);
-    this.picker.hide();
   }
 
   public detached() {
@@ -77,6 +72,7 @@ export class AureliaPikadayDatepicker {
   }
 
   private setConfig() {
+    this.config.field = (this.element as any);
     if (!this.config.i18n) { this.config.i18n = this.i18n; }
     if (!this.config.firstDay) { this.config.firstDay = 1; }
 
@@ -87,14 +83,13 @@ export class AureliaPikadayDatepicker {
     this.config.parse = (dateString: string, format: string) => {
       return moment(dateString, format).toDate();
     };
-    this.config.onSelect = (date) => {
-      this.value = this.picker.toString();
-      this.picker.hide();
-    };
     this.config.onOpen = () => {
-      if (this.picker) {
+      if (this.picker && this.value) {
         this.picker.setDate(this.value);
       }
+    };
+    this.config.onClose = () => {
+      this.value = this.picker.toString();
     };
   }
 }
