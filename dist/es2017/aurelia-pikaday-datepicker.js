@@ -87,7 +87,7 @@ let AureliaPikadayDatepicker = class AureliaPikadayDatepicker {
             if (this.disabled) {
                 this.picker.hide();
             }
-            else if (this.value) {
+            else {
                 this.picker.setDate(this.value);
             }
         };

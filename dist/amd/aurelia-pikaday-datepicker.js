@@ -88,7 +88,7 @@ define(["require", "exports", "aurelia-framework", "pikaday", "moment"], functio
                 if (_this.disabled) {
                     _this.picker.hide();
                 }
-                else if (_this.value) {
+                else {
                     _this.picker.setDate(_this.value);
                 }
             };

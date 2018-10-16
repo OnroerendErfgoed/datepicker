@@ -86,7 +86,7 @@ export class AureliaPikadayDatepicker {
     this.config.onOpen = () => {
       if (this.disabled) {
         this.picker.hide();
-      } else if (this.value) {
+      } else {
         this.picker.setDate(this.value);
       }
     };
