@@ -1,4 +1,3 @@
-/// <reference types="pikaday" />
 import * as Pikaday from 'pikaday';
 export declare class AureliaPikadayDatepicker {
     private element;
@@ -12,5 +11,5 @@ export declare class AureliaPikadayDatepicker {
     attached(): void;
     detached(): void;
     keydown(e: KeyboardEvent): boolean;
-    private setConfig();
+    private setConfig;
 }

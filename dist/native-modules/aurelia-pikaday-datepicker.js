@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,10 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-exports.__esModule = true;
-var aurelia_framework_1 = require("aurelia-framework");
-var Pikaday = require("pikaday");
-var moment = require("moment");
+import { inject, bindable, bindingMode } from 'aurelia-framework';
+import * as Pikaday from 'pikaday';
+import * as moment from 'moment';
 var AureliaPikadayDatepicker = (function () {
     function AureliaPikadayDatepicker(element) {
         this.element = element;
@@ -101,25 +99,25 @@ var AureliaPikadayDatepicker = (function () {
         };
     };
     __decorate([
-        aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
+        bindable({ defaultBindingMode: bindingMode.twoWay }),
         __metadata("design:type", String)
-    ], AureliaPikadayDatepicker.prototype, "value");
+    ], AureliaPikadayDatepicker.prototype, "value", void 0);
     __decorate([
-        aurelia_framework_1.bindable,
+        bindable,
         __metadata("design:type", String)
-    ], AureliaPikadayDatepicker.prototype, "placeholder");
+    ], AureliaPikadayDatepicker.prototype, "placeholder", void 0);
     __decorate([
-        aurelia_framework_1.bindable,
+        bindable,
         __metadata("design:type", Object)
-    ], AureliaPikadayDatepicker.prototype, "config");
+    ], AureliaPikadayDatepicker.prototype, "config", void 0);
     __decorate([
-        aurelia_framework_1.bindable,
+        bindable,
         __metadata("design:type", Boolean)
-    ], AureliaPikadayDatepicker.prototype, "disabled");
+    ], AureliaPikadayDatepicker.prototype, "disabled", void 0);
     AureliaPikadayDatepicker = __decorate([
-        aurelia_framework_1.inject(Element),
+        inject(Element),
         __metadata("design:paramtypes", [Element])
     ], AureliaPikadayDatepicker);
     return AureliaPikadayDatepicker;
 }());
-exports.AureliaPikadayDatepicker = AureliaPikadayDatepicker;
+export { AureliaPikadayDatepicker };

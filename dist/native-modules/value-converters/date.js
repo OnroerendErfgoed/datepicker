@@ -1,6 +1,4 @@
-"use strict";
-exports.__esModule = true;
-var moment = require("moment");
+import * as moment from 'moment';
 var DateValueConverter = (function () {
     function DateValueConverter() {
     }
@@ -16,4 +14,4 @@ var DateValueConverter = (function () {
     };
     return DateValueConverter;
 }());
-exports.DateValueConverter = DateValueConverter;
+export { DateValueConverter };
